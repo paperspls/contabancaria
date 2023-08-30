@@ -1,0 +1,14 @@
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\bin\Debug\net7.0\contabancaria.exe
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\bin\Debug\net7.0\contabancaria.deps.json
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\bin\Debug\net7.0\contabancaria.runtimeconfig.json
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\bin\Debug\net7.0\contabancaria.dll
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\bin\Debug\net7.0\contabancaria.pdb
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.AssemblyInfoInputs.cache
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.AssemblyInfo.cs
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.csproj.CoreCompileInputs.cache
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.dll
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\refint\contabancaria.dll
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.pdb
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\contabancaria.genruntimeconfig.cache
+C:\Users\Rhyan\Desktop\contabancaria\contabancaria\obj\Debug\net7.0\ref\contabancaria.dll
