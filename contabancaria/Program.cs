@@ -1,7 +1,10 @@
-﻿namespace contabancaria
+﻿using System;
+
+namespace contabancaria
 {
     public class Program
     {
+        private static ConsoleKeyInfo ConsoleKeyInfo;
         static void Main(string[] args)
         {
             int opcao;
@@ -38,34 +41,44 @@
                     case 1:
                         Console.WriteLine("\nCriar conta\n");
                         Console.WriteLine("Seja bem-vindo a Fundo Falso & Finanças Bancos!\n");
+                        KeyPress();
                         break;
                     case 2:
                         Console.WriteLine("\nListar Todas as Contas\n");
+                        KeyPress();
                         break;
                     case 3:
                         Console.WriteLine("\nBuscar Conta por Número\n");
+                        KeyPress();
                         break;
                     case 4:
                         Console.WriteLine("\nAtualizar Dados da Conta\n");
+                        KeyPress();
                         break;
                     case 5:
                         Console.WriteLine("\nApagar Conta\n");
+                        KeyPress();
                         break;
                     case 6:
                         Console.WriteLine("\nSacar\n");
+                        KeyPress();
                         break;
                     case 7:
                         Console.WriteLine("\nDepositar\n");
+                        KeyPress();
                         break;
                     case 8:
                         Console.WriteLine("\nTransferir Valores entre Contas\n");
+                        KeyPress();
                         break;
                     case 9:
                         Console.WriteLine("\nNegociar dívidas\n");
                         Console.WriteLine("Este recurso está indefinitivamente fora de serviço, lamentamos.\n");
+                        KeyPress();
                         break;
                     default:
                         Console.WriteLine("\nOpção inválida!\n");
+                        KeyPress();
                         break;
                 }
             }
@@ -80,6 +93,14 @@
             Console.WriteLine("*****************************************************");
 
 
+        }
+        static void KeyPress()
+        {
+            do
+            {
+                Console.Write("\nPressione Enter para Continuar...");
+                ConsoleKeyInfo = Console.ReadKey();
+            } while (ConsoleKeyInfo.Key != ConsoleKey.Enter);
         }
     }
 }
