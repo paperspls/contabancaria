@@ -1,4 +1,5 @@
-﻿using System;
+﻿using contabancaria.Model;
+using System;
 
 namespace contabancaria
 {
@@ -9,22 +10,36 @@ namespace contabancaria
         {
             int opcao;
 
+            Conta c1 = new Conta(1, 123, 1, "Gaspar", 1000000.00M);
+
+            c1.Visualizar();
+            c1.SetTipo(2);
+            c1.Visualizar();
+
+            c1.Sacar(1000);
+            
+            c1.Visualizar();
+
+            c1.Depositar(5000);
+
+            c1.Visualizar();
+           
             while (true)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\r\n  ______ ______ ______   ____          _   _  _____ ____   _____ \r\n |  ____|  ____|  ____| |  _ \\   /\\   | \\ | |/ ____/ __ \\ / ____|\r\n | |__  | |__  | |__    | |_) | /  \\  |  \\| | |   | |  | | (___  \r\n |  __| |  __| |  __|   |  _ < / /\\ \\ | . ` | |   | |  | |\\___ \\ \r\n | |    | |    | |      | |_) / ____ \\| |\\  | |___| |__| |____) |\r\n |_|    |_|    |_|      |____/_/    \\_\\_| \\_|\\_____\\____/|_____/ \r\n                                                                 \r\n                                                                 \r\n");
                 Console.WriteLine("******************************************************************");
-                Console.WriteLine("1- Criar Conta                                       ");
-                Console.WriteLine("2- Listar Todas as Contas                            ");
-                Console.WriteLine("3- Buscar Conta por Número                           ");
-                Console.WriteLine("4- Atualizar Dados da Conta                          ");
-                Console.WriteLine("5- Apagar Conta                                      ");
-                Console.WriteLine("6- Sacar                                             ");
-                Console.WriteLine("7- Depositar                                         ");
-                Console.WriteLine("8- Transferir Valores entre Contas                   ");
-                Console.WriteLine("9- Negociar dívidas                                  ");
-                Console.WriteLine("10- Sair                                             ");
+                Console.WriteLine("1- Criar Conta                                                    ");
+                Console.WriteLine("2- Listar Todas as Contas                                         ");
+                Console.WriteLine("3- Buscar Conta por Número                                        ");
+                Console.WriteLine("4- Atualizar Dados da Conta                                       ");
+                Console.WriteLine("5- Apagar Conta                                                   ");
+                Console.WriteLine("6- Sacar                                                          ");
+                Console.WriteLine("7- Depositar                                                      ");
+                Console.WriteLine("8- Transferir Valores entre Contas                                ");
+                Console.WriteLine("9- Negociar dívidas                                               ");
+                Console.WriteLine("10- Sair                                                          ");
                 Console.WriteLine("******************************************************************");
                 Console.Write("Entre com a opção desejada: ");
                 opcao = Convert.ToInt32(Console.ReadLine());
