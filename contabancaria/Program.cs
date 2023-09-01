@@ -10,6 +10,9 @@ namespace contabancaria
         {
             int opcao;
 
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+            
             Conta c1 = new Conta(1, 123, 1, "Gaspar", 1000000.00M);
 
             c1.Visualizar();
@@ -23,11 +26,25 @@ namespace contabancaria
             c1.Depositar(5000);
 
             c1.Visualizar();
-           
+
+            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Victor", 1000000.00M, 1000.00M);
+
+            cc1.Visualizar();
+
+            cc1.Sacar(20000000000000000000000000.00M);
+
+            cc1.Visualizar();
+
+            cc1.Depositar(5000);
+
+            cc1.Visualizar();
+
+            ContaPoupanca cp2 = new ContaPoupanca(3, 123, 2, "Pedro", 10000.00M, 29);
+
+            cp2.Visualizar();
+
             while (true)
             {
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\r\n  ______ ______ ______   ____          _   _  _____ ____   _____ \r\n |  ____|  ____|  ____| |  _ \\   /\\   | \\ | |/ ____/ __ \\ / ____|\r\n | |__  | |__  | |__    | |_) | /  \\  |  \\| | |   | |  | | (___  \r\n |  __| |  __| |  __|   |  _ < / /\\ \\ | . ` | |   | |  | |\\___ \\ \r\n | |    | |    | |      | |_) / ____ \\| |\\  | |___| |__| |____) |\r\n |_|    |_|    |_|      |____/_/    \\_\\_| \\_|\\_____\\____/|_____/ \r\n                                                                 \r\n                                                                 \r\n");
                 Console.WriteLine("******************************************************************");
                 Console.WriteLine("1- Criar Conta                                                    ");
