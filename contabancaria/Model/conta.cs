@@ -16,7 +16,7 @@ namespace contabancaria.Model
         private decimal saldo;
 
         //Método Construtor
-        public Conta(int numero, int agencia, int tipo, string titular, decimal saldo)
+        public Conta(int numero, int agencia, int tipo, string titular, decimal saldo) 
         {
             this.numero = numero;
             this.agencia = agencia;
