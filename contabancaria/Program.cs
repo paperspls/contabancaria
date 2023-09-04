@@ -1,4 +1,5 @@
-﻿using contabancaria.Model;
+﻿using contabancaria.Controller;
+using contabancaria.Model;
 using System;
 
 namespace contabancaria
@@ -8,26 +9,22 @@ namespace contabancaria
         private static ConsoleKeyInfo ConsoleKeyInfo;
         static void Main(string[] args)
         {
-            int opcao;
+            int opcao, agencia, tipo, aniversario;
+            string? titular;
+            decimal saldo, limite;
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
             
-            ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Victor", 1000000.00M, 1000.00M);
+            ContaController contas = new();
 
-            cc1.Visualizar();
 
-            cc1.Sacar(20000000000000000000000000.00M);
+            ContaCorrente cc1 = new ContaCorrente(contas.GerarNumero(), 123, 1, "Victor", 1000000.00M, 1000.00M);
+            contas.Cadastrar(cc1);
 
-            cc1.Visualizar();
-
-            cc1.Depositar(5000);
-
-            cc1.Visualizar();
-
-            ContaPoupanca cp2 = new ContaPoupanca(3, 123, 2, "Pedro", 10000.00M, 29);
-
-            cp2.Visualizar();
+            ContaPoupanca cp1 = new ContaPoupanca(contas.GerarNumero(), 123, 2, "Pedro", 10000.00M, 29);
+            contas.Cadastrar(cp1);
+            
 
             while (true)
             {
@@ -59,10 +56,46 @@ namespace contabancaria
                     case 1:
                         Console.WriteLine("\nCriar conta\n");
                         Console.WriteLine("Seja bem-vindo a Fundo Falso & Finanças Bancos!\n");
+
+                        //Infos da conta
+                        Console.Write("Digite o Número da Agência: ");
+                        agencia = Convert.ToInt32(Console.ReadLine());
+
+                        Console.Write("Digite o Nome do Titular: ");
+                        titular = Console.ReadLine();
+
+                        titular ??= string.Empty;
+
+                        do
+                        {
+                            Console.Write("Digite o Tipo da Conta: ");
+                            tipo = Convert.ToInt32(Console.ReadLine());
+                        } while (tipo != 1  && tipo != 2);
+                        
+                        Console.Write("Digite o Saldo da Conta: ");
+                        saldo = Convert.ToDecimal(Console.ReadLine());
+                        
+                        switch(tipo)
+                        {
+                            case 1:
+                                Console.Write("Digite o Limite da Conta: ");
+                                limite = Convert.ToDecimal(Console.ReadLine());
+
+                                contas.Cadastrar(new ContaCorrente(contas.GerarNumero(),
+                                    agencia, tipo, titular, saldo, limite));
+                                break;
+                            case 2:
+                                Console.Write("Digite o Aniversário da Conta: ");
+                                aniversario = Convert.ToInt32(Console.ReadLine());
+                                contas.Cadastrar(new ContaPoupanca(contas.GerarNumero(),
+                                    agencia, tipo, titular, saldo, aniversario));
+                                break;
+                        }
                         KeyPress();
                         break;
                     case 2:
                         Console.WriteLine("\nListar Todas as Contas\n");
+                        contas.ListarTodas();
                         KeyPress();
                         break;
                     case 3:
@@ -104,11 +137,11 @@ namespace contabancaria
         }
         static void Sobre()
         {
-            Console.WriteLine("*****************************************************");
+            Console.WriteLine("******************************************************************");
             Console.WriteLine("Projeto Desenvolvido por:                            ");
             Console.WriteLine("Rhyan Magalhães - rhyan.magalhaes@outlook.com        ");
             Console.WriteLine("github.com/paperspls                         ");
-            Console.WriteLine("*****************************************************");
+            Console.WriteLine("******************************************************************");
 
 
         }
