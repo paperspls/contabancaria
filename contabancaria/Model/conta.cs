@@ -106,9 +106,9 @@ namespace contabancaria.Model
                     tipo = "Conta Poupança";
                     break;
             }
-            Console.WriteLine("************************************************************");
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             Console.WriteLine("Dados da Conta");
-            Console.WriteLine("************************************************************");
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             Console.WriteLine($"Número da conta: {this.numero}");
             Console.WriteLine($"Número da agência: {this.agencia}");
             Console.WriteLine($"Tipo da conta: {tipo}");
