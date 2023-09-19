@@ -32,16 +32,19 @@ namespace contabancaria
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\r\n  ______ ______ ______   ____          _   _  _____ ____   _____ \r\n |  ____|  ____|  ____| |  _ \\   /\\   | \\ | |/ ____/ __ \\ / ____|\r\n | |__  | |__  | |__    | |_) | /  \\  |  \\| | |   | |  | | (___  \r\n |  __| |  __| |  __|   |  _ < / /\\ \\ | . ` | |   | |  | |\\___ \\ \r\n | |    | |    | |      | |_) / ____ \\| |\\  | |___| |__| |____) |\r\n |_|    |_|    |_|      |____/_/    \\_\\_| \\_|\\_____\\____/|_____/ \r\n                                                                 \r\n                                                                 \r\n");
                 Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-                Console.WriteLine("1- Criar Conta                                                    ");
-                Console.WriteLine("2- Listar Todas as Contas                                         ");
-                Console.WriteLine("3- Buscar Conta por Número                                        ");
-                Console.WriteLine("4- Atualizar Dados da Conta                                       ");
-                Console.WriteLine("5- Apagar Conta                                                   ");
-                Console.WriteLine("6- Sacar                                                          ");
-                Console.WriteLine("7- Depositar                                                      ");
-                Console.WriteLine("8- Transferir Valores entre Contas                                ");
-                Console.WriteLine("9- Negociar dívidas                                               ");
-                Console.WriteLine("10- Sair                                                          ");
+                Console.WriteLine("                                                                  ");
+                Console.WriteLine("                  1- Criar Conta                                  ");
+                Console.WriteLine("                  2- Listar Todas as Contas                       ");
+                Console.WriteLine("                  3- Buscar Conta por Número                      ");
+                Console.WriteLine("                  4- Atualizar Dados da Conta                     ");
+                Console.WriteLine("                  5- Apagar Conta                                 ");
+                Console.WriteLine("                  6- Sacar                                        ");
+                Console.WriteLine("                  7- Depositar                                    ");
+                Console.WriteLine("                  8- Transferir Valores entre Contas              ");
+                Console.WriteLine("                  9- Negociar dívidas                             ");
+                Console.WriteLine("                  10- Consulta por titular                        ");
+                Console.WriteLine("                  11- Sair                                        ");
+                Console.WriteLine("                                                                  ");
                 Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 Console.Write("Entre com a opção desejada: ");
                 
@@ -56,7 +59,7 @@ namespace contabancaria
                     Console.ResetColor();
                 }
 
-                if (opcao == 10)
+                if (opcao == 11)
                 {
                     Console.WriteLine("\nFundo Falso & Finanças agradece a preferência!");
                     Sobre();
@@ -139,11 +142,7 @@ namespace contabancaria
 
                             titular ??= string.Empty;
 
-                           /* do
-                            {
-                                Console.Write("Digite o Tipo da Conta: ");
-                                tipo = Convert.ToInt32(Console.ReadLine());
-                            } while (tipo != 1 && tipo != 2); */
+                           
 
                             Console.Write("Digite o Saldo da Conta: ");
                             saldo = Convert.ToDecimal(Console.ReadLine());
@@ -232,6 +231,18 @@ namespace contabancaria
                         Console.WriteLine("Este recurso está indefinitivamente fora de serviço, lamentamos o transtorno.\n");
                         KeyPress();
                         break;
+                    case 10:
+                        Console.WriteLine("\nConsulta por titular\n");
+                        Console.Write("Digite o Nome do Titular: ");
+                        titular = Console.ReadLine();
+
+                        titular ??= string.Empty;
+
+                        contas.ListarTodasPorTitular(titular);
+
+                        KeyPress();
+                        break;
+
                     default:
                         Console.WriteLine("\nOpção inválida!\n");
                         KeyPress();
